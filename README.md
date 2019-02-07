@@ -1,3 +1,5 @@
+[![Build status](https://dev.azure.com/hacker20403/GitHubAdo/_apis/build/status/POI%20Build)](https://dev.azure.com/hacker20403/GitHubAdo/_build/latest?definitionId=1)
+
 # Project Name!!!
 
 The DevOps open hack event is designed to foster learning via implementing DevOps practices with a series of challenges.
