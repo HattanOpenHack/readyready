@@ -32,9 +32,9 @@ namespace poi.Controllers
             var item = _context.POIs.Find(ID);
             if (item == null)
             {
-                return NotFound();
-            }
-            return Ok(item);
+                return NotFound()
+          //  }
+           // return Ok(item);
         }
 
         [HttpGet("trip/{tripID}", Name = "GetPOIsByTripId")]
