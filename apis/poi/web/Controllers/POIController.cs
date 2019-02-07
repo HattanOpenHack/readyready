@@ -32,8 +32,8 @@ namespace poi.Controllers
             var item = _context.POIs.Find(ID);
             if (item == null)
             {
-                return NotFound()
-          //  }
+                return NotFound();
+            }
            // return Ok(item);
         }
 
