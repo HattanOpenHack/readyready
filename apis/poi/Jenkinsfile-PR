@@ -1,13 +1,14 @@
+pipeline{
   agent  { node { label 'master' } }
 
   environment {
-    BUID_TAG = "jenkins/poi${env.BUILD_NUMBER}"
+    BUID_TAG = "poipr${env.BUILD_NUMBER}"
   }
 
   stages {
     stage('build') {
       steps {
-        sh "docker build -t ${env.ACR_ENDPOINT}/jenkins/api-poi:${BUID_TAG} $WORKSPACE/apis/poi"
+        sh "docker build -t ${env.ACR_ENDPOINT}/jenkins/api-poi:${BUID_TAG} $WORKSPACE/apis/poi/web"
       }
     } 
   }
@@ -17,7 +18,7 @@ post {
     echo 'Post Build Results'
     script {
       properties([[$class: 'GithubProjectProperty',
-                projectUrlStr: 'https://github.com/HattanOpenHack/readyready']])
+                projectUrlStr: 'https://github.com/HattanOpenHack/openhack-devops-team']])
     }
    step([$class: 'GitHubIssueNotifier',
         issueAppend: true,
